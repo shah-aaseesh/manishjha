@@ -3002,9 +3002,11 @@ input:focus, textarea:focus, select:focus {
 }
 
 .minimal-social-icon.fb:hover { background: #1877f2; border-color: #1877f2; }
-.minimal-social-icon.x-tw:hover { background: #000000; border-color: #444444; }
+.minimal-social-icon.msg:hover { background: #00B2FF; border-color: #00B2FF; }
+.minimal-social-icon.wa:hover { background: #25D366; border-color: #25D366; }
 .minimal-social-icon.insta:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; }
 .minimal-social-icon.yt:hover { background: #ff0000; border-color: #ff0000; }
+.minimal-social-icon.x-tw:hover { background: #000000; border-color: #444444; }
 .minimal-social-icon.in:hover { background: #0a66c2; border-color: #0a66c2; }
 
 .minimal-footer-bottom {

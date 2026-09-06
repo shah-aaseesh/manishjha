@@ -150,8 +150,11 @@ export const HeroSection = ({ onVideoClick, onBioClick, onOpinionsClick }) => {
                     <a href={profile.socials.facebook} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Facebook" title="Facebook">
                       <i className="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href={profile.socials.twitter} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Twitter / X" title="X (Twitter)">
-                      <i className="fa-brands fa-x-twitter"></i>
+                    <a href={profile.socials.messenger} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Messenger Channel" title="Messenger Channel">
+                      <i className="fa-brands fa-facebook-messenger"></i>
+                    </a>
+                    <a href={profile.socials.whatsapp} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="WhatsApp" title="WhatsApp Community">
+                      <i className="fa-brands fa-whatsapp"></i>
                     </a>
                     <a href={profile.socials.instagram} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Instagram" title="Instagram">
                       <i className="fa-brands fa-instagram"></i>

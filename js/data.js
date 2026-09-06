@@ -7,15 +7,16 @@ const siteData = {
     country: "Nepal",
     quote: "Need to Change Yourself to Change Our World.",
     bio: "Dramatic actualize economic sound potentialities through platform of empowerment. Proactively go forward web service before strategic web service. Professionally fashion reliable e-markets through state of art paradigms. Authoritatively enhance 24/7 imperatives with frictionless.",
-    phone: "+977 9851000000",
-    email: "contact@manishjha.com.np",
-    address: "New Baneshwor, Kathmandu, Nepal",
+    phone: "+977 9851473775",
+    email: "office.manishjha@gmail.com",
+    address: "Ram Chandra Marg, Battisputali-09, Kathmandu, Nepal",
     socials: {
-      facebook: "https://facebook.com/manishjha",
-      twitter: "https://x.com/manishjha",
-      instagram: "https://instagram.com/manishjha",
-      linkedin: "https://linkedin.com/in/manishjha",
-      youtube: "https://youtube.com/@manishjha"
+      facebook: "https://www.facebook.com/share/1DiGTNw6aK/",
+      messenger: "https://www.messenger.com/channel/ManishJhaNepal1",
+      whatsapp: "https://chat.whatsapp.com/EZTOlVV4vJGLN0y1a2RQOq?s=qt&p=a&mlu=4&ilr=4",
+      instagram: "https://www.instagram.com/manishjha_nepal?stkn=MTN4NWcxOTk5M3FsZA==",
+      youtube: "https://www.youtube.com/@manishjhanepal",
+      twitter: "https://x.com/manishjhanepal"
     }
   },
 

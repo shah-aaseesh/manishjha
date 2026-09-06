@@ -47,11 +47,13 @@ export const siteData = {
     officeParliament: "Federal Parliament Secretariat, Singha Durbar, Kathmandu",
     officeConstituency: "Mithila Civic Office, Station Road, Janakpurdham, Dhanusha",
     socials: {
-      facebook: "https://facebook.com",
-      twitter: "https://twitter.com",
-      instagram: "https://instagram.com",
-      youtube: "https://youtube.com",
-      linkedin: "https://linkedin.com"
+      facebook: "https://www.facebook.com/share/1DiGTNw6aK/",
+      messenger: "https://www.messenger.com/channel/ManishJhaNepal1",
+      whatsapp: "https://chat.whatsapp.com/EZTOlVV4vJGLN0y1a2RQOq?s=qt&p=a&mlu=4&ilr=4",
+      instagram: "https://www.instagram.com/manishjha_nepal?stkn=MTN4NWcxOTk5M3FsZA==",
+      youtube: "https://www.youtube.com/@manishjhanepal",
+      twitter: "https://x.com/manishjhanepal",
+      email: "office.manishjha@gmail.com"
     }
   },
 

@@ -94,14 +94,24 @@ export const Footer = ({ onNavigate, onContactClick }) => {
               <i className="fa-brands fa-facebook-f"></i>
             </a>
             <a
-              href={profile.socials.twitter}
+              href={profile.socials.messenger}
               target="_blank"
               rel="noopener noreferrer"
-              className="minimal-social-icon x-tw"
-              aria-label="X (Twitter)"
-              title="X (Twitter)"
+              className="minimal-social-icon msg"
+              aria-label="Messenger"
+              title="Messenger Channel"
             >
-              <i className="fa-brands fa-x-twitter"></i>
+              <i className="fa-brands fa-facebook-messenger"></i>
+            </a>
+            <a
+              href={profile.socials.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="minimal-social-icon wa"
+              aria-label="WhatsApp"
+              title="WhatsApp Community"
+            >
+              <i className="fa-brands fa-whatsapp"></i>
             </a>
             <a
               href={profile.socials.instagram}
@@ -122,16 +132,6 @@ export const Footer = ({ onNavigate, onContactClick }) => {
               title="YouTube"
             >
               <i className="fa-brands fa-youtube"></i>
-            </a>
-            <a
-              href={profile.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="minimal-social-icon in"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-            >
-              <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </div>
 

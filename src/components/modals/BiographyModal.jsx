@@ -113,20 +113,20 @@ export const BiographyModal = ({ isOpen, onClose }) => {
         {/* Modal Footer */}
         <div className="bio-modal-footer">
           <div className="bio-socials-row">
-            <a href={profile.socials.facebook} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Facebook">
+            <a href={profile.socials.facebook} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Facebook" title="Facebook">
               <i className="fa-brands fa-facebook-f"></i>
             </a>
-            <a href={profile.socials.twitter} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Twitter">
-              <i className="fa-brands fa-x-twitter"></i>
+            <a href={profile.socials.messenger} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Messenger" title="Messenger Channel">
+              <i className="fa-brands fa-facebook-messenger"></i>
             </a>
-            <a href={profile.socials.instagram} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Instagram">
+            <a href={profile.socials.whatsapp} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="WhatsApp" title="WhatsApp Community">
+              <i className="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href={profile.socials.instagram} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="Instagram" title="Instagram">
               <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href={profile.socials.youtube} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="YouTube">
+            <a href={profile.socials.youtube} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="YouTube" title="YouTube">
               <i className="fa-brands fa-youtube"></i>
-            </a>
-            <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-pill-btn" aria-label="LinkedIn">
-              <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </div>
           <button className="btn-crimson" onClick={onClose}>
