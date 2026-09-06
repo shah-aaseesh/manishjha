@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { siteData } from '../data/siteData';
 import { useTheme } from '../context/ThemeContext';
 
-export const HeroSection = ({ onVideoClick, onBioClick }) => {
+export const HeroSection = ({ onVideoClick, onBioClick, onOpinionsClick }) => {
   const [activeVideoIdx, setActiveVideoIdx] = useState(0);
   const { profile, videos, impactMetrics } = siteData;
   const { lang } = useTheme();
@@ -19,6 +19,15 @@ export const HeroSection = ({ onVideoClick, onBioClick }) => {
     } else {
       const el = document.getElementById('about-card');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleOpinionsClick = (e) => {
+    e.preventDefault();
+    if (onOpinionsClick) {
+      onOpinionsClick();
+    } else {
+      window.location.hash = 'opinions';
     }
   };
 
@@ -111,12 +120,9 @@ export const HeroSection = ({ onVideoClick, onBioClick }) => {
               </div>
 
               <a
-                href="#more-interviews"
+                href="#opinions"
                 className="more-videos-link"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onVideoClick(currentVideo);
-                }}
+                onClick={handleOpinionsClick}
               >
                 <i className="fa-regular fa-circle-play"></i>
                 <span>{lang === 'np' ? 'थप अन्तर्वार्ता भिडियोहरू' : 'More Interview Videos'}</span>

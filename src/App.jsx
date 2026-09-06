@@ -108,6 +108,7 @@ export const App = () => {
                 <HeroSection
                   onVideoClick={(video) => setActiveVideo(video)}
                   onBioClick={() => navigate('biography')}
+                  onOpinionsClick={() => navigate('opinions')}
                 />
 
                 {/* Vertical Shorts Ever-Looping Marquee Stream */}
