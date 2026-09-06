@@ -8,16 +8,6 @@ export const ContactPage = ({ onBackHome }) => {
   const { lang, toggleLang } = useTheme();
   const { showToast } = useToast();
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    targetOffice: 'kathmandu',
-    purpose: 'general',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [copiedItem, setCopiedItem] = useState(null);
 
   useEffect(() => {
@@ -29,34 +19,6 @@ export const ContactPage = ({ onBackHome }) => {
     setCopiedItem(key);
     showToast(lang === 'np' ? `प्रतिलिपि गरियो: ${text}` : `Copied to clipboard: ${text}`, 'info');
     setTimeout(() => setCopiedItem(null), 2000);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name.trim() || !formData.message.trim()) {
-      showToast(lang === 'np' ? 'कृपया नाम र सन्देश भर्नुहोस्।' : 'Please enter your name and message.', 'error');
-      return;
-    }
-
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      showToast(
-        lang === 'np'
-          ? 'तपाईंको सन्देश सफलतापूर्वक पठाइयो। हाम्रो सचिवालयले छिट्टै सम्पर्क गर्नेछ।'
-          : 'Your message has been sent successfully. Our secretariat team will be in touch shortly.',
-        'success'
-      );
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        targetOffice: 'kathmandu',
-        purpose: 'general',
-        message: ''
-      });
-    }, 900);
   };
 
   const { kathmandu, janakpur } = contactLocations;
@@ -89,10 +51,6 @@ export const ContactPage = ({ onBackHome }) => {
               <a href="#janakpur-office" className="editorial-link-btn">
                 <i className="fa-solid fa-location-dot"></i>
                 <span>{lang === 'np' ? 'जनकपुर क्षेत्र कार्यालय (४ सम्पर्क)' : 'Janakpur Office (4 Contacts)'}</span>
-              </a>
-              <a href="#message-desk" className="editorial-link-btn primary">
-                <i className="fa-regular fa-paper-plane"></i>
-                <span>{lang === 'np' ? 'सिधा सन्देश पठाउनुहोस्' : 'Send Correspondence'}</span>
               </a>
             </div>
           </div>
@@ -293,196 +251,6 @@ export const ContactPage = ({ onBackHome }) => {
               ))}
             </div>
 
-          </div>
-
-          {/* ========================================================================= */}
-          {/* 3. DIRECT CITIZEN INQUIRY & MESSAGE FORM */}
-          {/* ========================================================================= */}
-          <div className="contact-form-section-wrap" id="message-desk">
-            <div className="contact-form-grid">
-              
-              {/* Form Left Side: Context & Direct Assurance */}
-              <div className="form-context-col">
-                <div className="section-badge-pill">
-                  <i className="fa-regular fa-paper-plane"></i>
-                  <span>{lang === 'np' ? 'प्रत्यक्ष नागरिक सन्देश' : 'Direct Message Desk'}</span>
-                </div>
-                <h3 className="form-context-title">
-                  {lang === 'np' ? 'संसदीय सचिवालयमा सिधै पत्र वा सुझाव पठाउनुहोस्' : 'Send an Official Correspondence or Policy Inquiry'}
-                </h3>
-                <p className="form-context-desc">
-                  {lang === 'np'
-                    ? 'तपाईंको सन्देश सिधै काठमाडौँ वा जनकपुरधाम सचिवालयको आधिकारिक इनबक्समा दर्ता हुनेछ। प्रत्येक सन्देशको अध्ययन गरी उपयुक्त समयमा जवाफ दिइनेछ।'
-                    : 'Whether you have legislative recommendations, Dhanusha–3 constituency issues, or media interview requests, submit your correspondence directly to our secretarial desks.'}
-                </p>
-
-                <div className="contact-commitments-list">
-                  <div className="commitment-item">
-                    <i className="fa-solid fa-circle-check text-crimson"></i>
-                    <div>
-                      <strong>{lang === 'np' ? 'गोपनीयता र सुरक्षा' : 'Confidential & Direct'}</strong>
-                      <span>{lang === 'np' ? 'नागरिकका व्यक्तिगत विवरण पूर्ण गोप्य राखिन्छ।' : 'All citizen correspondences are handled with institutional confidentiality.'}</span>
-                    </div>
-                  </div>
-                  <div className="commitment-item">
-                    <i className="fa-solid fa-circle-check text-crimson"></i>
-                    <div>
-                      <strong>{lang === 'np' ? 'छिटो सम्बोधन' : 'Timely Response'}</strong>
-                      <span>{lang === 'np' ? 'सम्बन्धित सचिवालय अधिकृतद्वारा २४–४८ घण्टाभित्र समीक्षा।' : 'Reviewed by designated secretariat staff within 24–48 hours.'}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Form Right Side: Interactive Inputs */}
-              <div className="form-inputs-col">
-                <form className="contact-actual-form" onSubmit={handleSubmit}>
-                  
-                  {submitted && (
-                    <div className="form-success-alert">
-                      <i className="fa-solid fa-circle-check"></i>
-                      <span>
-                        {lang === 'np'
-                          ? 'धन्यवाद! तपाईंको सन्देश सचिवालयमा दर्ता भयो।'
-                          : 'Thank you! Your message has been submitted to the secretariat.'}
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="form-row-dual">
-                    <div className="form-group">
-                      <label htmlFor="contact-name">
-                        {lang === 'np' ? 'पूरा नाम *' : 'Full Name *'}
-                      </label>
-                      <div className="input-icon-wrap">
-                        <i className="fa-regular fa-user"></i>
-                        <input
-                          type="text"
-                          id="contact-name"
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder={lang === 'np' ? 'तपाईंको पूरा नाम' : 'e.g. Ram Prasad Shrestha'}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="contact-phone">
-                        {lang === 'np' ? 'मोबाइल नम्बर' : 'Phone Number'}
-                      </label>
-                      <div className="input-icon-wrap">
-                        <i className="fa-solid fa-phone"></i>
-                        <input
-                          type="tel"
-                          id="contact-phone"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder={lang === 'np' ? '+९७७ ९८००००००००' : '+977 9800000000'}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="form-row-dual">
-                    <div className="form-group">
-                      <label htmlFor="contact-email">
-                        {lang === 'np' ? 'इमेल ठेगाना' : 'Email Address'}
-                      </label>
-                      <div className="input-icon-wrap">
-                        <i className="fa-regular fa-envelope"></i>
-                        <input
-                          type="email"
-                          id="contact-email"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="name@example.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="contact-target-office">
-                        {lang === 'np' ? 'सम्बन्धित कार्यालय छनोट *' : 'Target Secretariat Office *'}
-                      </label>
-                      <div className="input-icon-wrap">
-                        <i className="fa-solid fa-building-flag"></i>
-                        <select
-                          id="contact-target-office"
-                          value={formData.targetOffice}
-                          onChange={(e) => setFormData({ ...formData, targetOffice: e.target.value })}
-                        >
-                          <option value="kathmandu">
-                            {lang === 'np' ? 'काठमाडौँ संसद् सचिवालय (National)' : 'Kathmandu Federal Secretariat (National)'}
-                          </option>
-                          <option value="janakpur">
-                            {lang === 'np' ? 'जनकपुर निर्वाचन क्षेत्र कार्यालय (Dhanusha-3)' : 'Janakpur Constituency Office (Dhanusha-3)'}
-                          </option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="contact-purpose">
-                      {lang === 'np' ? 'सरोकारको विषय / उद्देश्य' : 'Purpose of Correspondence'}
-                    </label>
-                    <div className="input-icon-wrap">
-                      <i className="fa-solid fa-tag"></i>
-                      <select
-                        id="contact-purpose"
-                        value={formData.purpose}
-                        onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
-                      >
-                        <option value="general">{lang === 'np' ? 'सामान्य सुझाव तथा संवाद' : 'General Inquiry & Feedback'}</option>
-                        <option value="legislative">{lang === 'np' ? 'संसदीय ऐन-कानुन तथा नीतिगत सुझाव' : 'Legislative & Policy Proposal'}</option>
-                        <option value="constituency">{lang === 'np' ? 'धनुषा–३ विकास तथा नागरिक समस्या' : 'Dhanusha–3 Constituency Development / Grievance'}</option>
-                        <option value="media">{lang === 'np' ? 'सञ्चार माध्यम / अन्तर्वार्ता समन्वय' : 'Press & Media Interview Request'}</option>
-                        <option value="youth">{lang === 'np' ? 'युवा उद्यमशीलता तथा तालिम' : 'Youth / Agritech Project Inquiry'}</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="contact-message">
-                      {lang === 'np' ? 'तपाईंको सन्देश / विवरण *' : 'Your Detailed Message *'}
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      rows="4"
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder={
-                        lang === 'np'
-                          ? 'कृपया आफ्नो विषय वा सुझाव स्पष्ट रूपमा लेख्नुहोस्...'
-                          : 'Please describe your query, legislative idea, or constituency matter in detail...'
-                      }
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="btn-crimson btn-submit-contact-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <i className="fa-solid fa-spinner fa-spin"></i>
-                        <span>{lang === 'np' ? 'पठाउँदै...' : 'Transmitting...'}</span>
-                      </>
-                    ) : (
-                      <>
-                        <i className="fa-solid fa-paper-plane"></i>
-                        <span>{lang === 'np' ? 'सचिवालयमा सन्देश पठाउनुहोस्' : 'Submit Correspondence to Secretariat'}</span>
-                      </>
-                    )}
-                  </button>
-
-                </form>
-              </div>
-
-            </div>
           </div>
 
         </div>
