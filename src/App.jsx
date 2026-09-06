@@ -10,6 +10,7 @@ import { ProgramsSection } from './components/ProgramsSection';
 import { GallerySection } from './components/GallerySection';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { FloatingContactBox } from './components/FloatingContactBox';
 import { BiographyPage } from './pages/BiographyPage';
 import { MissionVisionPage } from './pages/MissionVisionPage';
 import { ArticlesPage } from './pages/ArticlesPage';
@@ -177,6 +178,9 @@ export const App = () => {
 
           {/* Floating Scroll To Top with Progress Ring */}
           <ScrollToTop />
+
+          {/* Floating Blue Contact Box on Right Edge */}
+          <FloatingContactBox />
 
           {/* Interactive Modals */}
           <VideoModal
