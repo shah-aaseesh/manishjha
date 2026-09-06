@@ -35,7 +35,11 @@ export const ShortsMarqueeSection = ({ onVideoClick }) => {
                       alt={itemTitle}
                       className="opinion-vertical-thumb-img"
                       onError={(e) => {
-                        e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-speaking-mic.jpeg';
+                        if (e.currentTarget.src.includes('maxresdefault')) {
+                          e.currentTarget.src = `https://i.ytimg.com/vi/${item.youtubeId}/mqdefault.jpg`;
+                        } else {
+                          e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-speaking-mic.jpeg';
+                        }
                       }}
                     />
 
