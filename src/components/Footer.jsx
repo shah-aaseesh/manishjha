@@ -43,25 +43,20 @@ export const Footer = ({ onNavigate, onContactClick }) => {
       <div className="container">
         <div className="minimal-footer-main">
           
-          {/* Brand & Parliamentary Identity */}
+          {/* Brand Identity without Hon or emblem icon */}
           <div className="minimal-footer-brand">
-            <div className="minimal-footer-emblem">
-              <i className="fa-solid fa-landmark-dome"></i>
-            </div>
-            <div className="minimal-footer-titles">
-              <h4 className="minimal-footer-name">
-                {lang === 'np' ? 'माननीय मनिष झा' : 'Hon. Manish Jha'}
-                <span className="minimal-footer-badge">{lang === 'np' ? 'सांसद' : 'MP'}</span>
-              </h4>
-              <p className="minimal-footer-role">
-                {lang === 'np'
-                  ? 'प्रतिनिधिसभा सदस्य • सङ्घीय संसद, नेपाल'
-                  : 'Member of the Federal Parliament of Nepal'}
-              </p>
-            </div>
+            <h4 className="minimal-footer-name">
+              {lang === 'np' ? 'मनिष झा' : 'Manish Jha'}
+            </h4>
+            <span className="minimal-footer-divider">/</span>
+            <p className="minimal-footer-role">
+              {lang === 'np'
+                ? 'प्रतिनिधिसभा सदस्य, नेपाल'
+                : 'Member of Parliament, Nepal'}
+            </p>
           </div>
 
-          {/* Quick Navigation Links */}
+          {/* Clean Navigation Links */}
           <nav className="minimal-footer-nav" aria-label="Footer Navigation">
             <a href="#home" onClick={(e) => handleNav(e, 'home')}>
               {lang === 'np' ? 'गृहपृष्ठ' : 'Home'}
@@ -70,13 +65,13 @@ export const Footer = ({ onNavigate, onContactClick }) => {
               {lang === 'np' ? 'जीवनी' : 'Biography'}
             </a>
             <a href="#mission-vision" onClick={(e) => handleNav(e, 'mission-vision')}>
-              {lang === 'np' ? 'ध्येय र दृष्टिकोण' : 'Mission & Vision'}
+              {lang === 'np' ? 'दृष्टिकोण' : 'Vision'}
             </a>
             <a href="#articles" onClick={(e) => handleNav(e, 'articles')}>
-              {lang === 'np' ? 'आलेख तथा मिडिया' : 'Press'}
+              {lang === 'np' ? 'मिडिया' : 'Press'}
             </a>
             <a href="#opinions" onClick={(e) => handleNav(e, 'opinions')}>
-              {lang === 'np' ? 'संसदीय विचार' : 'Opinions'}
+              {lang === 'np' ? 'मन्तव्य' : 'Opinions'}
             </a>
             <a href="#gallery" onClick={(e) => handleNav(e, 'gallery')}>
               {lang === 'np' ? 'तस्बिरहरू' : 'Gallery'}
@@ -145,7 +140,7 @@ export const Footer = ({ onNavigate, onContactClick }) => {
         {/* Minimal Bottom Bar */}
         <div className="minimal-footer-bottom">
           <p className="minimal-copyright">
-            © {new Date().getFullYear()} {lang === 'np' ? 'माननीय मनिष झा' : 'Hon. Manish Jha, MP'}. {lang === 'np' ? 'सर्वाधिकार सुरक्षित।' : 'All rights reserved.'}
+            © {new Date().getFullYear()} {lang === 'np' ? 'मनिष झा' : 'Manish Jha'}. {lang === 'np' ? 'सर्वाधिकार सुरक्षित।' : 'All rights reserved.'}
           </p>
           <div className="minimal-footer-contacts">
             <a href={`tel:${profile.phone.split('/')[0].trim()}`} className="minimal-contact-link">
