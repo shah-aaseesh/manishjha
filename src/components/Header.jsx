@@ -167,6 +167,20 @@ export const Header = ({ onContactClick, currentPage = 'home', onNavigate }) => 
                 </li>
               );
             })}
+            {/* Mobile Drawer Quick Contact CTA */}
+            <li className="mobile-nav-cta-item">
+              <button
+                className="btn-crimson mobile-drawer-contact-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (onContactClick) onContactClick();
+                }}
+                aria-label="Contact Manish Jha"
+              >
+                <i className="fa-solid fa-paper-plane"></i>
+                <span>{lang === 'np' ? 'सम्पर्क गर्नुहोस्' : 'Contact Manish Jha'}</span>
+              </button>
+            </li>
           </ul>
         </nav>
 
