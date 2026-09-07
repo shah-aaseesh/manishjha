@@ -4730,56 +4730,121 @@ input:focus, textarea:focus, select:focus {
 
 @media (max-width: 768px) {
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.35rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    cursor: pointer;
+  }
+
+  .site-header {
+    height: 72px;
+  }
+
+  .site-header .container.navbar {
+    gap: 0.75rem;
+  }
+
+  .site-logo-header {
+    height: 40px;
+    max-width: 140px;
   }
 
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 72px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 72px);
     background: var(--header-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-start;
-    padding: 2.5rem 1.5rem;
-    gap: 1.5rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    padding: 1.75rem 1.25rem 3rem;
+    gap: 0.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
     transition: left var(--transition-normal);
+    overflow-y: auto;
+    z-index: 9999;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-link.active,
+  .nav-link:hover {
+    background: rgba(230, 40, 70, 0.15);
+    color: #ffffff;
+    border-color: rgba(230, 40, 70, 0.35);
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .btn-contact-header {
+    padding: 0.45rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  .header-lang-toggle {
+    padding: 0.42rem 0.75rem;
+    font-size: 0.78rem;
   }
 
   .hero-top-white-space {
     min-height: auto;
-    padding: 2.25rem 0 1.25rem;
+    padding: 2rem 0 1rem;
   }
 
   .hero-fullwidth-bg-overlay {
     background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.9) 65%,
-      rgba(255, 255, 255, 0.65) 100%
+      to bottom,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.92) 50%,
+      rgba(255, 255, 255, 0.8) 100%
     );
   }
 
   [data-theme='dark'] .hero-fullwidth-bg-overlay {
     background: linear-gradient(
-      to right,
-      rgba(10, 13, 31, 0.95) 0%,
-      rgba(10, 13, 31, 0.9) 65%,
-      rgba(10, 13, 31, 0.65) 100%
+      to bottom,
+      rgba(10, 13, 31, 0.96) 0%,
+      rgba(10, 13, 31, 0.92) 50%,
+      rgba(10, 13, 31, 0.8) 100%
     );
   }
 
   .hero-highlight-chips {
     gap: 0.4rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-chip {
-    font-size: 0.76rem;
-    padding: 0.3rem 0.75rem;
+    font-size: 0.74rem;
+    padding: 0.28rem 0.65rem;
   }
 
   .hero-actions-group {
@@ -4792,18 +4857,33 @@ input:focus, textarea:focus, select:focus {
   .btn-my-biography, .btn-hero-secondary {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 
   .hero-title-name, .hero-title-role {
-    font-size: 2.25rem;
+    font-size: 2.15rem;
   }
 
   .hero-parliament-tag {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
   }
 
   .impact-metrics-bar {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .impact-metric-card:not(:last-child) {
@@ -4815,6 +4895,7 @@ input:focus, textarea:focus, select:focus {
   .priorities-cta-banner {
     flex-direction: column;
     text-align: center;
+    padding: 2rem 1.25rem;
   }
 
   .priorities-cta-content {
@@ -4823,6 +4904,7 @@ input:focus, textarea:focus, select:focus {
 
   .articles-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .program-row {
@@ -4830,7 +4912,7 @@ input:focus, textarea:focus, select:focus {
   }
 
   .program-info-col {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .form-group-row {
@@ -4842,16 +4924,64 @@ input:focus, textarea:focus, select:focus {
   }
 
   .countdown-diamonds-row {
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .countdown-diamond-item {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
   }
 
   .countdown-val {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+  }
+
+  /* Floating Connect Tab on Mobile */
+  .floating-social-box {
+    transform: scale(0.88);
+    transform-origin: right center;
+  }
+
+  /* Scroll To Top on Mobile */
+  .scroll-to-top-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Biography Tabs on Mobile */
+  .bio-nav-tabs,
+  .bio-pills-row {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .bio-nav-tabs::-webkit-scrollbar,
+  .bio-pills-row::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-name, .hero-title-role {
+    font-size: 1.85rem;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+  }
+
+  .btn-crimson, .btn-outline-white, .btn-outline-dark {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8rem;
   }
 }
 
