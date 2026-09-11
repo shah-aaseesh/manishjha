@@ -31,6 +31,11 @@ export const BiographyModal = ({ isOpen, onClose }) => {
               src="/assets/images/profile.jpg"
               alt={profile.name}
               className="bio-modal-avatar"
+              decoding="async"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/assets/images/photos/manish-portrait-parliament.jpeg';
+              }}
             />
           </div>
           <div className="bio-modal-meta">

@@ -76,6 +76,12 @@ export const CampaignSection = ({ onViewDetailsClick }) => {
               src="/assets/images/photos/manish-campaign-poster.jpeg"
               alt="Hon. Manish Jha Dhanusha-3 Mandate"
               className="campaign-poster-img"
+              loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/assets/images/photos/manish-speaking-mic.jpeg';
+              }}
             />
             <div className="campaign-poster-badge">
               <i className="fa-solid fa-bell"></i>
@@ -88,6 +94,12 @@ export const CampaignSection = ({ onViewDetailsClick }) => {
               src="/assets/images/photos/manish-stadium-rally-crowd.jpeg"
               alt="Massive Civic Rally with Manish Jha"
               className="campaign-rally-img"
+              loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/assets/images/photos/manish-speaking-mic.jpeg';
+              }}
             />
             <div className="campaign-rally-badge">
               <i className="fa-solid fa-users"></i>

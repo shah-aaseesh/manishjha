@@ -40,12 +40,11 @@ export const OpinionsSection = () => {
                     src={item.image}
                     alt={item.title}
                     className="opinion-media-img"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
-                      if (e.currentTarget.src.includes('maxresdefault')) {
-                        e.currentTarget.src = `https://i.ytimg.com/vi/${item.youtubeId}/mqdefault.jpg`;
-                      } else {
-                        e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-portrait-parliament.jpeg';
-                      }
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-portrait-parliament.jpeg';
                     }}
                   />
                   <div className="opinion-media-overlay"></div>

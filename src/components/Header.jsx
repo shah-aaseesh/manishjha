@@ -131,7 +131,9 @@ export const Header = ({ onContactClick, currentPage = 'home', onNavigate }) => 
             src="/assets/images/logo.png"
             alt="Manish Jha - Member of the Federal Parliament"
             className="site-logo-img site-logo-header"
+            decoding="async"
             onError={(e) => {
+              e.currentTarget.onerror = null;
               e.currentTarget.src = '/assets/images/manish-logo.png';
             }}
           />

@@ -22,6 +22,11 @@ export const ProgramModal = ({ isOpen, onClose, program }) => {
           <img
             src={program.image}
             alt={program.title}
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/assets/images/photos/manish-panel-speaking.jpeg';
+            }}
             style={{ width: '100%', maxHeight: '300px', objectFit: 'cover', objectPosition: 'center 10%', borderRadius: '12px', marginBottom: '1.25rem' }}
           />
 

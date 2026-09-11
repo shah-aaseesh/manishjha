@@ -34,7 +34,9 @@ export const BiographyPage = ({ onBackHome, onContactClick }) => {
                   src="/assets/images/photos/manish-portrait-parliament.jpeg"
                   alt="Hon. Manish Jha"
                   className="human-portrait-img"
+                  decoding="async"
                   onError={(e) => {
+                    e.currentTarget.onerror = null;
                     e.currentTarget.src = '/assets/images/profile.jpg';
                   }}
                 />
@@ -208,7 +210,7 @@ export const BiographyPage = ({ onBackHome, onContactClick }) => {
 
           <div className="bio-photo-grid">
             <div className="bio-photo-card">
-              <img src="/assets/images/photos/manish-academic-library.jpeg" alt="Academic & Research" className="bio-photo-card-img" />
+              <img src="/assets/images/photos/manish-academic-library.jpeg" alt="Academic & Research" className="bio-photo-card-img" loading="lazy" decoding="async" />
               <div className="bio-photo-card-caption">
                 <strong>{lang === 'np' ? 'अध्ययन र अनुसन्धान' : 'Academic Rigor & Research'}</strong>
                 <span>{lang === 'np' ? '३ स्नातकोत्तर र फ्याक्ट्स नेपालको जग' : '3 Masters & Foundation of FACTS Nepal'}</span>
@@ -216,7 +218,7 @@ export const BiographyPage = ({ onBackHome, onContactClick }) => {
             </div>
 
             <div className="bio-photo-card">
-              <img src="/assets/images/photos/manish-ndtv-dialogue.jpeg" alt="NDTV World Conclave" className="bio-photo-card-img" />
+              <img src="/assets/images/photos/manish-ndtv-dialogue.jpeg" alt="NDTV World Conclave" className="bio-photo-card-img" loading="lazy" decoding="async" />
               <div className="bio-photo-card-caption">
                 <strong>{lang === 'np' ? 'अन्तर्राष्ट्रिय नीति संवाद' : 'International Media Dialogue'}</strong>
                 <span>{lang === 'np' ? 'एनडिटिभी वर्ल्डमा ब्रेन ड्रेन विमर्श' : 'NDTV World Keynote on Brain Gain'}</span>
@@ -224,7 +226,7 @@ export const BiographyPage = ({ onBackHome, onContactClick }) => {
             </div>
 
             <div className="bio-photo-card">
-              <img src="/assets/images/photos/manish-voting-ballot.jpeg" alt="Democratic Franchise" className="bio-photo-card-img" />
+              <img src="/assets/images/photos/manish-voting-ballot.jpeg" alt="Democratic Franchise" className="bio-photo-card-img" loading="lazy" decoding="async" />
               <div className="bio-photo-card-caption">
                 <strong>{lang === 'np' ? 'लोकतन्त्र र मतदान' : 'Democratic Franchise'}</strong>
                 <span>{lang === 'np' ? 'निर्वाचन आयोगमा मतदान अभ्यास' : 'Exercising Vote in National Elections'}</span>
@@ -232,7 +234,7 @@ export const BiographyPage = ({ onBackHome, onContactClick }) => {
             </div>
 
             <div className="bio-photo-card">
-              <img src="/assets/images/photos/manish-stadium-rally-crowd.jpeg" alt="Massive Rally Support" className="bio-photo-card-img" />
+              <img src="/assets/images/photos/manish-stadium-rally-crowd.jpeg" alt="Massive Rally Support" className="bio-photo-card-img" loading="lazy" decoding="async" />
               <div className="bio-photo-card-caption">
                 <strong>{lang === 'np' ? 'नागरिक ऐक्यबद्धता' : 'Grassroots Solidarity'}</strong>
                 <span>{lang === 'np' ? 'हजारौं नागरिकको उत्साहजनक सहभागिता' : 'Historic Stadium Rally with RSP Flags'}</span>
@@ -240,7 +242,7 @@ export const BiographyPage = ({ onBackHome, onContactClick }) => {
             </div>
 
             <div className="bio-photo-card">
-              <img src="/assets/images/photos/manish-cultural-maithili.jpeg" alt="Mithila Heritage" className="bio-photo-card-img" />
+              <img src="/assets/images/photos/manish-cultural-maithili.jpeg" alt="Mithila Heritage" className="bio-photo-card-img" loading="lazy" decoding="async" />
               <div className="bio-photo-card-caption">
                 <strong>{lang === 'np' ? 'मैथिली संस्कृति र पहिचान' : 'Mithila Cultural Heritage'}</strong>
                 <span>{lang === 'np' ? 'जनकपुरधाममा स्थानीय संवाद' : 'Janakpurdham Community Dialogue'}</span>
@@ -248,7 +250,7 @@ export const BiographyPage = ({ onBackHome, onContactClick }) => {
             </div>
 
             <div className="bio-photo-card">
-              <img src="/assets/images/photos/manish-hrm-awards-keynote.jpeg" alt="Corporate Excellence Keynote" className="bio-photo-card-img" />
+              <img src="/assets/images/photos/manish-hrm-awards-keynote.jpeg" alt="Corporate Excellence Keynote" className="bio-photo-card-img" loading="lazy" decoding="async" />
               <div className="bio-photo-card-caption">
                 <strong>{lang === 'np' ? 'उद्यमशीलता र सुशासन' : 'Enterprise & Governance'}</strong>
                 <span>{lang === 'np' ? 'एचआरएम अवार्ड्स विशेष मन्तव्य' : 'HRM Awards for Corporate Excellence'}</span>

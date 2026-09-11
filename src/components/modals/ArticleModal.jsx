@@ -60,6 +60,11 @@ export const ArticleModal = ({ isOpen, onClose, article }) => {
           <img
             src={article.image}
             alt={article.title}
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/assets/images/photos/manish-speaking-mic.jpeg';
+            }}
             style={{ width: '100%', maxHeight: '380px', objectFit: 'cover', objectPosition: 'center 10%', borderRadius: '8px', marginBottom: '1.5rem' }}
           />
 

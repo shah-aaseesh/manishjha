@@ -77,6 +77,12 @@ export const ProgramsSection = ({ onViewProgram, onContactClick }) => {
                     src={featuredProgram.image}
                     alt={featuredProgram.title}
                     className="spotlight-img"
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = '/assets/images/photos/manish-panel-speaking.jpeg';
+                    }}
                   />
                   <div className="spotlight-badge-overlay">
                     <span className="live-pulse-dot"></span>
@@ -173,7 +179,17 @@ export const ProgramsSection = ({ onViewProgram, onContactClick }) => {
                       className="program-card-media"
                       onClick={() => onViewProgram && onViewProgram(prog)}
                     >
-                      <img src={prog.image} alt={prog.title} className="card-media-img" />
+                      <img
+                        src={prog.image}
+                        alt={prog.title}
+                        className="card-media-img"
+                        loading="lazy"
+                        decoding="async"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = '/assets/images/photos/manish-panel-speaking.jpeg';
+                        }}
+                      />
                       <div className="card-date-badge">
                         <span className="card-date-day">{dateBadge.day}</span>
                         <span className="card-date-month">{dateBadge.month}</span>
@@ -234,7 +250,17 @@ export const ProgramsSection = ({ onViewProgram, onContactClick }) => {
               {pastPrograms.map((past) => (
                 <div key={past.id} className="past-program-card">
                   <div className="past-card-media">
-                    <img src={past.image} alt={past.title} className="past-img" />
+                    <img
+                      src={past.image}
+                      alt={past.title}
+                      className="past-img"
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/assets/images/photos/manish-panel-speaking.jpeg';
+                      }}
+                    />
                     <span className="past-status-badge">
                       <i className="fa-solid fa-circle-check"></i> {lang === 'np' ? 'सम्पन्न' : 'Concluded'}
                     </span>

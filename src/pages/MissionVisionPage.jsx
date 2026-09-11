@@ -26,7 +26,10 @@ export const MissionVisionPage = ({ onBackHome, onContactClick }) => {
                   src="/assets/images/photos/manish-cultural-maithili.jpeg"
                   alt="Hon. Manish Jha in Janakpur"
                   className="human-portrait-img"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
+                    e.currentTarget.onerror = null;
                     e.currentTarget.src = '/assets/images/photos/manish-portrait-parliament.jpeg';
                   }}
                 />

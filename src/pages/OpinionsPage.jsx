@@ -57,7 +57,10 @@ export const OpinionsPage = ({ onBackHome, onContactClick }) => {
                   src="/assets/images/photos/manish-studio-portrait-dark.jpeg"
                   alt="Hon. Manish Jha in Media Conclave"
                   className="human-portrait-img"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
+                    e.currentTarget.onerror = null;
                     e.currentTarget.src = '/assets/images/photos/manish-portrait-parliament.jpeg';
                   }}
                 />
@@ -150,12 +153,11 @@ export const OpinionsPage = ({ onBackHome, onContactClick }) => {
                       src={item.image}
                       alt={itemTitle}
                       className="opinion-video-thumb-img"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
-                        if (e.currentTarget.src.includes('maxresdefault')) {
-                          e.currentTarget.src = `https://i.ytimg.com/vi/${item.youtubeId}/mqdefault.jpg`;
-                        } else {
-                          e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-portrait-parliament.jpeg';
-                        }
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-portrait-parliament.jpeg';
                       }}
                     />
                     <div className="opinion-video-play-btn" aria-hidden="true">
@@ -203,7 +205,10 @@ export const OpinionsPage = ({ onBackHome, onContactClick }) => {
                         src={item.image}
                         alt={itemTitle}
                         className="opinion-vertical-thumb-img"
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
+                          e.currentTarget.onerror = null;
                           e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-speaking-mic.jpeg';
                         }}
                       />

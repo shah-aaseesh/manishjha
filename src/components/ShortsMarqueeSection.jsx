@@ -34,12 +34,11 @@ export const ShortsMarqueeSection = ({ onVideoClick }) => {
                       src={item.image}
                       alt={itemTitle}
                       className="opinion-vertical-thumb-img"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
-                        if (e.currentTarget.src.includes('maxresdefault')) {
-                          e.currentTarget.src = `https://i.ytimg.com/vi/${item.youtubeId}/mqdefault.jpg`;
-                        } else {
-                          e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-speaking-mic.jpeg';
-                        }
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = item.fallbackImage || '/assets/images/photos/manish-speaking-mic.jpeg';
                       }}
                     />
 

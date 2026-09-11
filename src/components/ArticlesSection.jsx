@@ -39,7 +39,17 @@ export const ArticlesSection = ({ onViewAllArticles }) => {
                 className="article-media-wrap"
                 title={`Read on ${article.publication}`}
               >
-                <img src={article.image} alt={article.title} className="article-img" />
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="article-img"
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/assets/images/photos/manish-speaking-mic.jpeg';
+                  }}
+                />
                 <span className="article-category-badge">
                   <i className={article.publicationLogo || 'fa-solid fa-newspaper'} style={{ marginRight: '5px' }}></i>
                   {article.publication}
